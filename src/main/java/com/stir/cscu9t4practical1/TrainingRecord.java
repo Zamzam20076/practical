@@ -5,14 +5,11 @@ import java.util.*;
 public class TrainingRecord {
 private List<Entry> tr;
 public TrainingRecord() {
-	tr = new ArrayList<Entry>();
-   } //constructor
-
+} //constructor
 // add a record to the list
- public void addEntry(Entry e){
+public void addEntry(Entry e){
 tr.add(e);    
   } // addClass
-
 // look up the entry of a given day and month
  public String lookupEntry (int d, int m, int y) {
  ListIterator<Entry> iter = tr.listIterator();
@@ -38,7 +35,7 @@ return result;
 }
 
 
-public String removeEntry (String n,int d, int m, int y) {
+public String removeEntry (String n, int d, int m, int y) {
 	ListIterator<Entry> iter = tr.listIterator();
  String result = "No entries found";
  while (iter.hasNext()) {

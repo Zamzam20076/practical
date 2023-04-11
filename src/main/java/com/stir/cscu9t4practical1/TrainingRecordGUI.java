@@ -17,6 +17,11 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
     private JTextField mins = new JTextField(2);
     private JTextField secs = new JTextField(2);
     private JTextField dist = new JTextField(4);
+    private JTextField Repetitions = new JTextField(4);
+    private JTextField Recovery = new JTextField(4);
+    private JTextField terrain = new JTextField(4);
+    private JTextField tempo = new JTextField(4);
+    private JTextField where = new JTextField(4);
     private JLabel labn = new JLabel(" Name:");
     private JLabel labd = new JLabel(" Day:");
     private JLabel labm = new JLabel(" Month:");
@@ -24,10 +29,24 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
     private JLabel labh = new JLabel(" Hours:");
     private JLabel labmm = new JLabel(" Mins:");
     private JLabel labs = new JLabel(" Secs:");
-    private JLabel labdist = new JLabel(" Distance (km):");
-    private JButton addR = new JButton("Add");
-    private JButton lookUpByDate = new JButton("Look Up");
+    private JLabel labRepet = new JLabel(" Repetitions:");
+    private JLabel labRecov = new JLabel(" Recovery:");
+    private JLabel labter = new JLabel(" Terrain:");
+    private JLabel labtemp = new JLabel(" Tempo:");
+    private JLabel labwhr = new JLabel(" where:");
 
+
+    private JLabel labdist = new JLabel(" Distance (km):");
+
+    private JButton addR = new JButton("Add");
+    private JButton addC = new JButton("AddC");
+    private JButton addS = new JButton("AddS");
+
+
+    private JButton lookUpByDate = new JButton("Look Up");
+    private JButton FindAllByDate = new JButton("Find All ByDate");
+    private JButton RemoveEntry = new JButton("Remove");
+    
     private TrainingRecord myAthletes = new TrainingRecord();
 
     private JTextArea outputArea = new JTextArea(5, 50);
@@ -64,15 +83,38 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         add(labdist);
         add(dist);
         dist.setEditable(true);
+        add(labRepet);
+        add(Repetitions);
+        Repetitions.setEditable(true);
+        add(labRecov);
+        add(Recovery);
+        Recovery.setEditable(true);
+        add(labter);
+        add(terrain);
+       terrain.setEditable(true);
+        add(labtemp);
+        add(tempo);
+        tempo.setEditable(true);
+        add(labwhr);
+        add(where);
+        where.setEditable(true);
         add(addR);
-        addR.addActionListener(this);
-        add(lookUpByDate);
+       addR.addActionListener(this);
+       add(addC);
+        addC.addActionListener(this);
+        add(addS);
+     addS.addActionListener(this);
+       add(lookUpByDate);
         lookUpByDate.addActionListener(this);
+      add(FindAllByDate);
+     FindAllByDate.addActionListener(this);
+       add(RemoveEntry);
+        RemoveEntry.addActionListener(this);
         add(outputArea);
-        outputArea.setEditable(false);
+       outputArea.setEditable(false);
         setSize(720, 200);
         setVisible(true);
-        blankDisplay();
+       blankDisplay();
 
         // To save typing in new entries while testing, uncomment
         // the following lines (or add your own test cases)
